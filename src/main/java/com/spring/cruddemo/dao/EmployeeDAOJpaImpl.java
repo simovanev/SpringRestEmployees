@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public class EmployeeDAOJpaImpl implements EmployeeDAO {
-    private EntityManager manager;
+    private final EntityManager manager;
 
     public EmployeeDAOJpaImpl(EntityManager manager) {
         this.manager = manager;
@@ -21,4 +21,22 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
                 "SELECT e FROM Employee e", Employee.class);
         return query.getResultList();
     }
+
+    @Override
+    public Employee findById(int id) {
+        return manager.find(Employee.class, id);
+    }
+
+    @Override
+    public Employee save(Employee employee) {
+        return manager.merge(employee);
+    }
+
+    @Override
+    public void delete(int id) {
+        Employee employee = manager.find(Employee.class, id);
+        manager.remove(employee);
+    }
+
+
 }
