@@ -11,6 +11,7 @@ spring:
 #    defer-datasource-initialization: true
     hibernate:
       ddl-auto: update
+    open-in-view: on
 #  sql:
 #    init:
 #      mode: always
