@@ -3,10 +3,7 @@ package com.spring.cruddemo.rest;
 
 import com.spring.cruddemo.entity.Employee;
 import com.spring.cruddemo.service.EmployeeService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,12 +21,17 @@ public class EmployeeRestController {
         return employeeService.findAll();
     }
 
-    @GetMapping("/employee/{id}")
+    @GetMapping("/employees/{id}")
     public Employee getEmployee(@PathVariable int id){
         Employee employee= employeeService.findById(id);
         if (employee== null){
             throw new RuntimeException("Employee not found - "+id);
         }
         return  employee;
+    }
+    @PostMapping("/employees")
+    public Employee addEmployee(@RequestBody Employee employee){
+        employee.setId(0);
+        return employeeService.save(employee);
     }
 }
