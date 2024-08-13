@@ -38,4 +38,14 @@ public class EmployeeRestController {
     public Employee updateEmployee(@RequestBody Employee employee){
         return employeeService.save(employee);
     }
+    @DeleteMapping("/employees/{id}")
+    public Employee deleteEmployee(@PathVariable int id){
+        Employee employee = employeeService.findById(id);
+        if (employee== null){
+            throw new RuntimeException("Employee not found - "+id);
+
+        }
+        employeeService.delete(id);
+        return employee;
+    }
 }
