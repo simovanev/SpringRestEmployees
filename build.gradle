@@ -25,6 +25,9 @@ dependencies {
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	// https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf
+	implementation group: 'org.thymeleaf', name: 'thymeleaf', version: '2.0.5'
+
 }
 
 tasks.named('test') {
