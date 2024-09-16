@@ -2,7 +2,6 @@ package com.spring.cruddemo.service;
 
 import com.spring.cruddemo.entity.Employee;
 import com.spring.cruddemo.repository.EmployeeRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,8 +30,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
 
-    public Employee save(Employee employee) {
-        return employeeRepository.save(employee);
+    public void save(Employee employee) {
+        employeeRepository.save(employee);
     }
 
     @Override

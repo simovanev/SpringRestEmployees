@@ -14,12 +14,12 @@
     <form th:action="@{/employees/save}"
           th:object="${employee}"
           th:method="POST">
-        <input type="text" th:fied="*{firstName}" placeholder="First Name"
-               class="form-control mb-4 w25">
-        <input type="text" th:fied="*{lastName}" placeholder="Last Name"
-               class="form-control mb-4 w25">
-        <input type="text" th:fied="*{email}" placeholder="Email"
-               class="form-control mb-4 w25">
+        <input type="text" th:field="*{firstName}" placeholder="First Name"
+               class="form-control mb-4 w-25">
+        <input type="text" th:field="*{lastName}" placeholder="Last Name"
+               class="form-control mb-4 w-25">
+        <input type="text" th:field="*{email}" placeholder="Email"
+               class="form-control mb-4 w-25">
         <button type="submit" class="btn btn-info col-2">Save</button>
     </form>
 
