@@ -9,7 +9,11 @@
     <title>Employee form</title>
 
 <body>
-<h1>New employee form</h1>
+<h1>
+    <p>New employee form</p>
+</h1>
+<hr>
+
 <div class="container">
     <form th:action="@{/employees/save}"
           th:object="${employee}"
@@ -22,7 +26,8 @@
                class="form-control mb-4 w-25">
         <button type="submit" class="btn btn-info col-2">Save</button>
     </form>
-
+    <hr>
+<a th:href="@{list}">Back to employees list</a>
 
 </div>
 
