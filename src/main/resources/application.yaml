@@ -23,7 +23,7 @@ spring:
 # Login config to display SQL statements
 logging:
   level:
-    root: warn
+    root: info
     org:
       hibernate:
         sql: debug
